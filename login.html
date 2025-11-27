@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Login - Hamburgueria do Barulho</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="imagens/icon.webp" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><span class="logo-strong">Hamburgueria</span> do Barulho</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container login-page">
+  <div class="login-card">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return false;">
+      <label for="email">Email (Eduardo)</label>
+      <input type="text" id="email" />
+      <label for="senha">Senha (1291392522014)</label>
+      <input type="password" id="senha" />
+      <div class="actions">
+        <button class="btn" type="button" onclick="fazerLogin()">Entrar</button>
+      </div>
+      <p id="msg" class="form-msg"></p>
+      <p class="links"><a href="#">Cadastre-se</a> • <a href="#">Esqueceu a senha?</a></p>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 Hamburgueria do Barulho. Todos os direitos reservados.</p>
+    <div class="socials">
+      <a href="#">WhatsApp</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function fazerLogin(){
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+    var msg = document.getElementById('msg');
+    if(email === '' || senha === ''){
+      msg.style.color = 'red';
+      msg.innerText = 'Preencha todos os campos.';
+      return;
+    }
+    if(appValidateLogin(email, senha)){
+      
+      window.location.href = 'pedido.html';
+    } else {
+      msg.style.color = 'red';
+      msg.innerText = 'Usuário ou senha inválidos.';
+    }
+  }
+</script>
+</body>
+</html>

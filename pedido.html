@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pedido - Hamburgueria do Barulho</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="imagens/icon.webp" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo"><span class="logo-strong">Hamburgueria</span> do Barulho</div>
+    <nav class="main-nav">
+      <a href="#home">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+      <a href="index.html" class="btn small">Logout</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="container pedido-page">
+  <div class="pedido-grid">
+    <section class="left">
+      <h2>Produtos</h2>
+
+      <article class="product">
+        <img src="imagens/p1.jpg" alt="Cheeseburger Clássico">
+        <div class="prod-body">
+          <h3>Cheeseburger Clássico</h3>
+          <p>Delicioso hambúrguer com queijo cheddar, alface, tomate e nosso molho especial.</p>
+          <div class="prod-row">
+            <div class="price">R$ 25,00</div>
+            <button class="btn small" onclick="adicionarAoPedido('p1')">Adicionar ao Pedido</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="imagens/p2.jpg" alt="Bacon Burger">
+        <div class="prod-body">
+          <h3>Bacon Burger</h3>
+          <p>Hambúrguer suculento com bacon crocante, queijo e cebola caramelizada.</p>
+          <div class="prod-row">
+            <div class="price">R$ 30,00</div>
+            <button class="btn small" onclick="adicionarAoPedido('p2')">Adicionar ao Pedido</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="imagens/p3.jpg" alt="Veggie Burger">
+        <div class="prod-body">
+          <h3>Veggie Burger</h3>
+          <p>Opção vegetariana com hambúrguer de grão-de-bico, alface, tomate e molho especial.</p>
+          <div class="prod-row">
+            <div class="price">R$ 28,00</div>
+            <button class="btn small" onclick="adicionarAoPedido('p3')">Adicionar ao Pedido</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <aside class="right">
+      <h2>Pedido</h2>
+      <div id="cartArea">
+        <p class="empty">Ainda não há produtos.</p>
+      </div>
+
+      <div class="total-row">
+        <div>Total: <span id="totalPrice">R$ 0,00</span></div>
+        <button class="btn" onclick="finalizarPedido()">Finalizar Pedido</button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 Hamburgueria do Barulho. Todos os direitos reservados.</p>
+    <div class="socials">
+      <a href="#">WhatsApp</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  window.onload = function(){ renderCart(); };
+</script>
+</body>
+</html>
