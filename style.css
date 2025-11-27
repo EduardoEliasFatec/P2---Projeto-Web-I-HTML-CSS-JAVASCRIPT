@@ -245,6 +245,9 @@ body {
   grid-template-columns: 1fr 360px;
   gap: 18px;
   padding: 20px 0;
+
+}
+.pedido-page .login-page{
       height: 400vh;
 }
 
